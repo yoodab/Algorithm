@@ -1,7 +1,7 @@
 class Solution {
     public String solution(String number, int k) {
         StringBuilder answer = new StringBuilder();
-        
+        // String answer = ""; 
         int bigN = 0;
         int start = 0;
         
@@ -16,7 +16,7 @@ class Solution {
                 }
                 
             }
-
+            // answer+=bigN; String에서 StringBuilder로 수정
             answer.append(bigN);
 
         }
