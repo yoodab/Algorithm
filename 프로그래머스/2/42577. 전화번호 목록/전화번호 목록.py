@@ -4,7 +4,9 @@ def solution(phone_book):
     answer = True
     
     for i in range(1,len(phone_book)):
-        if phone_book[i].startswith(phone_book[i-1]):
-            answer = False
-            break
+        if len(phone_book[i-1])<len(phone_book[i]):
+            if phone_book[i-1] == phone_book[i][0:len(phone_book[i-1])]:
+                answer = False
+                break
+        
     return answer
