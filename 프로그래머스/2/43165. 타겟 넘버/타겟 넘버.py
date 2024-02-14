@@ -3,9 +3,10 @@ def solution(numbers, target):
     aList = [0]
     for num in numbers:
         tmp =[]
-        for j in aList:
-            tmp.append(j+num)
-            tmp.append(j-num)
+        for i in aList:
+            tmp.append(i+num)
+            tmp.append(i-num)
         aList = tmp.copy()
+        
     answer = aList.count(target)
     return answer
