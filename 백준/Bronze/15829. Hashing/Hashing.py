@@ -3,4 +3,4 @@ code = input()
 answer = 0
 for i in range(n):
     answer += (ord(code[i])-ord('a')+1)*31**i
-print(answer)
+print(answer%1234567891)
