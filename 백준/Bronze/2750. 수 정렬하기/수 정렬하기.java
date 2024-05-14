@@ -1,30 +1,36 @@
 import java.util.Scanner;
-public class Main {
 
-	public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] nums = new int[N];
-        
-        for(int i = 0 ; i<N;i++){
-            nums[i]=sc.nextInt();
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // 입력 받기
+        int N = scanner.nextInt();
+        int[] numbers = new int[N];
+        for (int i = 0; i < N; i++) {
+            numbers[i] = scanner.nextInt();
         }
-        // 선택 정렬
-        int tmp = 0;
-        for(int i=0; i<N; i++){
-        	int minIndex = i;
-            for(int j=i+1;j<N;j++){
-                if(nums[minIndex]>nums[j]){
-                    minIndex = j;                    
-                }
-            }
-            tmp=nums[i];
-            nums[i]=nums[minIndex];
-            nums[minIndex]=tmp;    
-        }
-        for(int i=0;i<N;i++){
-            System.out.println(nums[i]);
+
+        // 삽입 정렬
+        insertionSort(numbers);
+
+        // 정렬된 결과 출력
+        for (int i = 0; i < N; i++) {
+            System.out.println(numbers[i]);
         }
     }
 
+    // 삽입 정렬 함수
+    public static void insertionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
 }
