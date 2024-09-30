@@ -4,7 +4,7 @@ class Solution {
         int i = 0;
         for(String name : seoul){
             if(name.equals("Kim")){
-                answer = Integer.toString(i);
+                answer = i + "";
             }
             i++;
         }
